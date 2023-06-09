@@ -9,9 +9,9 @@ function App() {
     return (
         <>
             <Navbar />
-            <ThemeButton />
-            <div className="flex-col p-10 justify-center"> {coinList}</div>
+            {coinList}
 
+        <ThemeButton />
         </>
     );
 }

@@ -3,15 +3,15 @@ import MoonIcon from "../public/moon-svgrepo-com.svg";
 import { useState } from "react";
 
 function ThemeButton() {
-  const [dark, setTheme] = useState(true);
-  let icon = dark ? SunIcon : MoonIcon;
-  const toggleTheme = () => {
-    setTheme((prevTheme) => !prevTheme);
-  };
-  return (
-    <div onClick={toggleTheme}>
-      <img src={icon}  alt="" width={100}/> 
-    </div>
-  );
+    const [dark, setTheme] = useState(true);
+    let icon = dark ? SunIcon : MoonIcon;
+    const toggleTheme = () => {
+        setTheme((prevTheme) => !prevTheme);
+    };
+    return (
+        <div className="flex items-center justify-center">
+            <img onClick={toggleTheme} src={icon} alt="" width={50} />
+        </div>
+    );
 }
 export default ThemeButton;

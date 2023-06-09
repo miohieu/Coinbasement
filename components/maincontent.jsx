@@ -17,9 +17,10 @@ export default function List(props) {
     let favoriteStatus = favorite.isFavorite ? liked : unliked;
     console.log(favoriteStatus)
 
-    return (<section className="main-content">
+    return (
+        <section className="main-content">
         <div className="container-md">
-            <div className="ranking">{props.ranking}</div>
+            <div className="ranking">#{props.ranking}</div>
             <div className="coinlist p-4">
 
                 <ul className="flex">
