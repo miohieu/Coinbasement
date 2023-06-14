@@ -1,5 +1,5 @@
-import SunIcon from "../public/sun-svgrepo-com.svg";
-import MoonIcon from "../public/moon-svgrepo-com.svg";
+import SunIcon from "/sun-svgrepo-com.svg";
+import MoonIcon from "/moon-svgrepo-com.svg";
 import { useState } from "react";
 
 function ThemeButton() {

@@ -1,8 +1,10 @@
 import logo from "/logo.svg";
+import HomeStore from "../store/homeStore";
+
+
 export default function Navbar() {
 
-
-
+    const store = HomeStore();
     return (
         <nav className="navbar xl:container bg-teal-900">
             <div className="container flex items-center">
@@ -13,9 +15,6 @@ export default function Navbar() {
                 <div className="navbar-right flex ml-3 items-center">
                     <ul className="navbar-links flex list-none">
                         <li>
-                            <a href="">Market</a>
-                        </li>
-                        <li>
                             <a href="">Explore</a>
                         </li>
                         <li>
@@ -23,7 +22,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                     <div className="button-login">Login</div>
-
+                    <input type="text" value={store.query} onChange={store.setQuery} />
                 </div>
             </div>
         </nav>

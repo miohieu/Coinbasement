@@ -1,11 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import theme from '../lib/theme.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Show from '../pages/_show.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App theme={theme} />
-  </React.StrictMode>,
+    <BrowserRouter>
+
+        <Routes>
+            <Route index element={<App />} />
+
+
+            <Route path='/:id' element={<Show />} />
+
+        </Routes>
+
+    </BrowserRouter>
 )
