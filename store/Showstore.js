@@ -3,7 +3,7 @@ import axios from "axios";
 
 const showStore = create((set) => ({
   graphData: [],
-  data: [],
+  data: undefined,
   fetchData: async (id) => {
     const [dataRes, graphRes] = await Promise.all([
       axios.get(
@@ -22,9 +22,8 @@ const showStore = create((set) => ({
         price: p,
       };
     });
-    console.log(dataRes);
-    set({ graphData });
     set({ data: dataRes.data });
+    set({ graphData });
   },
 }));
 

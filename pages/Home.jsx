@@ -13,20 +13,26 @@ export default function Home() {
 
 
     return (
-        <div>
-            {store.coins.map(coin => {
-                return (
+        <div className="main_content">
+            <div className="container">
+                {store.coins.map(coin => {
+                    return (
 
-                    <div key={coin.id}>
-                        <Link to={`/${coin.id}`}>
-                            {coin.name}
-                        </Link>
-                    </div>
-                )
-            }
+                        <div key={coin.id}>
+                            <Link className="" to={`/${coin.id}`}>
+                                <img src={coin.thumb} alt="" />{coin.name}
+                            </Link>
+                            <h4>{coin.price}/BTC</h4>
+                            <h4>{coin.usdPrice}/USD</h4>
 
-            )}
+                        </div>
+                    )
+                }
 
-        </div >)
+                )}
+
+            </div >
+        </div>
+    )
 
 }
