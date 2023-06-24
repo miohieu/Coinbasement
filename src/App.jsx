@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
-import "./App.css";
-import ThemeButton from "../components/theme-button";
+import "./style.scss";
 import Home from "../pages/Home.jsx"
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
         <>
             <Navbar />
             <Home />
-            <ThemeButton />
         </>
     );
 }

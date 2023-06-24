@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import showStore from "../store/Showstore"
 import { useParams } from "react-router-dom"
 import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import Navbar from "../components/Navbar";
 
 
 export default function Show() {
@@ -16,7 +17,9 @@ export default function Show() {
     if (!store.data) return <> </>;
 
     return (
+        
         <div>
+            <Navbar back></Navbar>
             <div>
                 <img src={store.data.image.small} alt="" />
                 <h1> {store.data.market_data.current_price.usd} </h1>
