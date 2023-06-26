@@ -10,11 +10,11 @@ export default function Navbar(back) {
         <nav className="navbar width">
             <div className="container flex items-center">
                 <div className="navbar-left flex items-center">
-                    { back && (
+                    {back && (
                         <Link to="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 48 48 48" width="48">
-                            <path fill="currentColor" d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z" /></svg>
-                    </Link>) 
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 48 48 48" width="48">
+                                <path fill="currentColor" d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z" /></svg>
+                        </Link>)
                     }
                     <h1 className="navbar-title "> <Link to="/">Coinbasement</Link> </h1>
 
@@ -28,7 +28,6 @@ export default function Navbar(back) {
                             <a href="">Portfolio</a>
                         </li>
                     </ul>
-                    <div className="button-login">Login</div>
                     <input type="text" value={store.query} onChange={store.setQuery} />
                 </div>
             </div>

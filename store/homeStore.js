@@ -6,6 +6,7 @@ const HomeStore = create((set) => ({
     coins: [],
     query: "",
     trending: [],
+    searchResult: false,
 
     setQuery: (e) => {
         set({ query: e.target.value });
@@ -20,16 +21,16 @@ const HomeStore = create((set) => ({
             );
             const coins = res.data.coins.map((coin) => {
                 return {
-                    name: coin.name,
-                    image: coin.large,
                     id: coin.id,
+                    thumb: coin.thumb,
+                    name: coin.name,
                 };
             });
-            set({ coins });
+            set({ coins, searchResult: true });
         } else {
-            set({ coins: trending });
+            set({ coins: trending, searchResult: false});
         }
-    }, 700),
+    }, 500),
 
     fetchCoins: async () => {
         const [res, btcRes] = await Promise.all([

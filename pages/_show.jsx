@@ -12,6 +12,7 @@ export default function Show() {
 
     useEffect(() => {
         store.fetchData(param.id)
+        return ()=> {store.reset()}
     }, [])
 
     if (!store.data) return <> </>;
@@ -20,20 +21,23 @@ export default function Show() {
         
         <div>
             <Navbar back></Navbar>
+        <div className="container width">
+
             <div>
                 <img src={store.data.image.small} alt="" />
                 <h1> {store.data.market_data.current_price.usd} </h1>
             </div>
-            <header>
+            <div className="show-header">
                 <h2>{store.data.name} ({store.data.symbol})</h2>
                 <h2>Rank: {store.data.market_cap_rank}</h2>
-            </header>
+            </div>
 
-            <LineChart width={300} height={300} data={store.graphData}>
+            <LineChart width={700} height={500} data={store.graphData}>
                 <YAxis />
                 <XAxis />
                 <Line type="monotone" dataKey="price" stroke="#8884d8" strokeWidth={2} />
             </LineChart>
+        </div>
 
         </div>
     )

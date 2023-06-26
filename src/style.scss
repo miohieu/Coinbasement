@@ -1,27 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;700&display=swap");
 @tailwind components;
 @tailwind utilities;
 
-*, body{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-    font-family: 'M PLUS 1p', sans-serif;
+$primary-color: #7f03ce;
+
+*,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "M PLUS 1p", sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .width {
-    margin: 0 auto;
-    padding: 3rem 2rem;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 .navbar {
-    color: white;
-    font-size: 1.3rem;
-    background-color: teal;
+  font-size: 1.3rem;
+  background-color: teal;
+  li,
+  input {
+    margin: 0 0.5rem;
+  }
+}
+
+.main_content {
+  display: flex;
+  justify-content: center;
+  background-color: $primary-color;
+  padding: 2rem;
+
+  .container {
+    padding: 1rem 2rem;
+    background-color: wheat;
     a {
-        text-decoration: none;
-        color: white;
+      color: black;
+      font-size: 2rem;
     }
-    li, input {
-        margin: 0 0.5rem;
+    img {
+      width: 20px;
+      margin: 0 1rem;
+      border-radius: 10px;
+      object-fit: cover;
     }
-    
+  }
 }
